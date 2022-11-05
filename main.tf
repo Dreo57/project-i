@@ -9,11 +9,11 @@ module "sg" {
     vpc = module.vpc.vpc_id
 }
 
-module "s3" {
-    # source = "../personal-project/s3"
-    source = "git::https://github.com/Dreo57/Project-1.git//s3"
+# module "s3" {
+#     # source = "../personal-project/s3"
+#     source = "git::https://github.com/Dreo57/Project-1.git//s3"
 
-}
+# }
 
 module "ec2" {
     # source = "../personal-project/ec2"
