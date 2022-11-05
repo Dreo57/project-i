@@ -11,8 +11,8 @@ module "sg" {
 
 module "s3" {
     # source = "../personal-project/sg"
-    source = "git::https://github.com/Dreo57/Project-1.git//S3"
-    
+    source = "git::https://github.com/Dreo57/Project-1.git//s3"
+
 }
 
 
