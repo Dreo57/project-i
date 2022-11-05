@@ -23,8 +23,8 @@ module "db-subnet" {
     # source = "../personal-project/db-subnet"
     
     source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
-    sn = module.vpc.sn_id
-    sn1 = module.vpc.sn1_id
+    sn = module.vpc.snpub1_id
+    sn1 = module.vpc.snprvt1_id
 
 }
 
