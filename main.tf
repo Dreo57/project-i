@@ -19,14 +19,14 @@ module "ec2" {
 
 }
 
-# module "db-subnet" {
-#     # source = "../personal-project/db-subnet"
+module "db-subnet" {
+    # source = "../personal-project/db-subnet"
     
-#     source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
-#     sn = module.vpc.sn_id
-#     sn1 = module.vpc.sn1_id
+    source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
+    sn = module.vpc.sn_id
+    sn1 = module.vpc.sn1_id
 
-# }
+}
 
 # module "rds" {
 #     # source = "../personal-project/rds"
