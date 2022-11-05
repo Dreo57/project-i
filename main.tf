@@ -15,7 +15,6 @@ module "s3" {
 
 }
 
-
 module "ec2" {
     # source = "../personal-project/ec2"
     source = "git::https://github.com/Dreo57/Project-1.git//ec2"
@@ -29,7 +28,6 @@ module "db-subnet" {
     source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
     sn = module.vpc.snprvt_id
     sn1 = module.vpc.snprvt1_id
-
 }
 
 # module "rds" {
