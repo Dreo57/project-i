@@ -2,26 +2,22 @@ module "vpc" {
     # source = "../personal-project/vpc"
     source = "git::https://github.com/Dreo57/Project-1.git//vpc"  
 }
-
 module "sg" {
     # source = "../personal-project/sg"
     source = "git::https://github.com/Dreo57/Project-1.git//sg"
     vpc = module.vpc.vpc_id
 }
-
 module "s3" {
     # source = "../personal-project/s3"
     source = "git::https://github.com/Dreo57/Project-1.git//s3"
 
 }
-
 module "ec2" {
     # source = "../personal-project/ec2"
     source = "git::https://github.com/Dreo57/Project-1.git//ec2"
     sg_id = module.sg.sg_id
     sn_pub = module.vpc.snpub_id
 }
-
 module "db-subnet" {
     # source = "../personal-project/db-subnet"
     
@@ -29,7 +25,6 @@ module "db-subnet" {
     sn = module.vpc.snprvt_id
     sn1 = module.vpc.snprvt1_id
 }
-
 module "endpoint" {
     # source = "../personal-project/endpoint"
     source = "git::https://github.com/Dreo57/Project-1.git//endpoint"
@@ -37,7 +32,6 @@ module "endpoint" {
     subnet_ids = module.vpc.snpub_id
     vpc_id = module.vpc.vpc_id
 }
-
 # module "rds" {
 #     # source = "../personal-project/rds"
 #     source = "git::https://github.com/Dreo57/Project-1.git//rds"
