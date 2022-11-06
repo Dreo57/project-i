@@ -30,6 +30,14 @@ module "db-subnet" {
     sn1 = module.vpc.snprvt1_id
 }
 
+module "endpoint" {
+    # source = "../personal-project/endpoint"
+    source = "git::https://github.com/Dreo57/Project-1.git//endpoint"
+    sgid = module.sg.sg_id
+    subnet_ids = module.vpc.snpub_id
+    vpc_id = module.vpc.vpc_id
+}
+
 # module "rds" {
 #     # source = "../personal-project/rds"
 #     source = "git::https://github.com/Dreo57/Project-1.git//rds"
