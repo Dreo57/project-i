@@ -20,7 +20,6 @@ module "ec2" {
 }
 module "db-subnet" {
     # source = "../personal-project/db-subnet"
-    
     source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
     sn = module.vpc.snprvt_id
     sn1 = module.vpc.snprvt1_id
@@ -39,13 +38,6 @@ module "endpoint" {
 #     db_sngp = module.db-subnet.db_sngp_id
 # }
 
-# module "launch_template" {
-#     source = "../personal-project/launch_template"
-#     # source = "git::https://github.com/Dreo57/Project-1.git//ec2"
-#     sg_id = module.sg.sg_id
-
-# }
-
 # module "asg-launch_template" {
 #     source = "../personal-project/asg-launch_template"
 #     # source = "git::https://github.com/Dreo57/Project-1.git//asg-launch_template"
@@ -57,7 +49,8 @@ module "endpoint" {
 # }
 
 # module "alb-tggroup" {
-#     source = "../personal-project/alb-tggroup"
+#     # source = "../personal-project/alb-tggroup"
+#     source = "git::https://github.com/Dreo57/Project-1.git//alb-tggroup"
 #     vpc = module.vpc.vpc_id
 #     dre_temp = module.asg-launch_template.launch_temp
 #     alb-sg_id = module.sg.lb-sg_id
@@ -65,3 +58,13 @@ module "endpoint" {
 #     snpub1 = module.vpc.snpub1_id
     
 # }
+
+module "ecs" {
+    # source = "../personal-project/ecs"
+    source = "git::https://github.com/Dreo57/Project-1.git//ecs"
+    sub_id = module.vpc.snpub_id
+    sub_id1 = module.vpc.snpub1_id
+    # load_balancer = module.alb-tggroup.elb-id
+    target_group = module.alb-tggroup.target-gp-arn
+    sec_grp = module.sg.sg_id
+}
