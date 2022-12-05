@@ -1,8 +1,8 @@
 #!/bin/bash
-yum update -y
-yum install httpd -y
-service httpd start
-chkconfig httpd on
+sudo yum update -y
+sudo amazon-linux-extras install nginx1 -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
 echo "
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ echo "
 </head>
 <body>
 <div class="header">
-  <h1>Hello from Dreo-inc !!!</h1>
+  <h1>Hello JJ Tech Family !!!</h1>
   <p>This Java Web Application Was Deployed Using CI/CD</p>
   <h1>New version deployment</h1>
 </div>
