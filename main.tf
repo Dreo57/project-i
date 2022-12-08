@@ -13,14 +13,14 @@ module "sg" {
 
 # }
 # module "ec2" {
-#     # source = "../personal-project/ec2"
-#     source = "git::https://github.com/Dreo57/Project-1.git//ec2"
+#     source = "../personal-project/ec2"
+#     # source = "git::https://github.com/Dreo57/Project-1.git//ec2"
 #     sg_id = module.sg.sg_id
 #     sn_pub = module.vpc.snpub_id
 # }
 # module "db-subnet" {
-#     # source = "../personal-project/db-subnet"
-#     source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
+#     source = "../personal-project/db-subnet"
+#     # source = "git::https://github.com/Dreo57/Project-1.git//db-subnet"
 #     sn = module.vpc.snprvt_id
 #     sn1 = module.vpc.snprvt1_id
 # }
@@ -32,8 +32,8 @@ module "sg" {
 #     vpc_id = module.vpc.vpc_id
 # }
 # module "rds" {
-#     # source = "../personal-project/rds"
-#     source = "git::https://github.com/Dreo57/Project-1.git//rds"
+#     source = "../personal-project/rds"
+#     # source = "git::https://github.com/Dreo57/Project-1.git//rds"
 #     rds_sg = module.sg.rds_sg_id
 #     db_sngp = module.db-subnet.db_sngp_id
 # }
