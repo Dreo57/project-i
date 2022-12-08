@@ -1,8 +1,8 @@
 #!/bin/bash
-sudo yum update -y
-sudo amazon-linux-extras install nginx1 -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
 echo "
 <!DOCTYPE html>
 <html lang="en">
